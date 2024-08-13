@@ -26,3 +26,14 @@ class Solution:
             if dfs(c) == False:
                 return []
         return output
+
+# visit to track course that all prereq have been solved
+# cycle is to introduced to detect the cycle
+#   dfs
+#       if already in cycle, return False
+#       then temporarily add it to cycle
+#       walk over each prereq, 
+#           if all pass, remove from cycle
+#           if one prereq fails, 
+#               it will never be removed from cycle
+#               nex time, dfs will fail immediately
